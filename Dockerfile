@@ -1,5 +1,5 @@
-FROM alpine:3.7
+FROM anapsix/alpine-java:latest
 
-ADD entrypoint.sh  /entrypoint.sh
+COPY entrypoint.sh  /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]

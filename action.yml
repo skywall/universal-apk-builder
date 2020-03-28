@@ -2,15 +2,36 @@ name: "Universal APK Builder"
 description: "Build Universal APK file from AAB file"
 inputs:
     aab_path:
-        description: "Path to *.aab file"
+        description: "Path to input *.aab file"
+        required: true
+    output_dir:
+        description: "Path to directory where outputs are stored"
+        required: false
+        default: "output"
+    keystore_path:
+        description: "Path to keystore file (*.jks)"
+        required: true
+    keystore_password: 
+        description: "Keystore password"
+        required: true
+    keystore_alias:
+        description: "Keystore alias"
+        required: true
+    keystore_alias_password: 
+        description: "Keystore alias password"
         required: true
 outputs:
-    apk_path:
-        description: "Output *.apk file path"
+    universal_apk_path:
+        description: "Final universal *.apk file path"
 
 runs:
     using: "docker"
     image: "Dockerfile"
     args:
         - ${{ inputs.aab_path }}
+        - ${{ inputs.output_dir }}
+        - ${{ inputs.keystore_path }}
+        - ${{ inputs.keystore_password }}
+        - ${{ inputs.keystore_alias }}
+        - ${{ inputs.keystore_alias_password }}
     

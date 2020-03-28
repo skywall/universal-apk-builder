@@ -5,8 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Universal APK - Job
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: "Build Universal APK - Step"
         uses: ./
         with:
-          aab_path: "/path/to/file.aab"
-        
+          aab_path: "test/app-release.aab"
+          output_dir: "output"
+          keystore_path: "test/keystore.jks"
+          keystore_password: "android"
+          keystore_alias: "androiddebugkey"
+          keystore_alias_password: "android"   
