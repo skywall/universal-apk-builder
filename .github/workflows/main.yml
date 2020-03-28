@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Build Universal APK - Job
+    steps:
+      - name: "Build Universal APK - Step"
+        uses: ./
+        with:
+          aab_path: "/path/to/file.aab"
+        

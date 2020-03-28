@@ -1,0 +1,16 @@
+name: "Universal APK Builder"
+description: "Build Universal APK file from AAB file"
+inputs:
+    aab_path:
+        description: "Path to *.aab file"
+        required: true
+outputs:
+    apk_path:
+        description: "Output *.apk file path"
+
+runs:
+    using: "docker"
+    image: "Dockerfile"
+    args:
+        - ${{ inputs.aab_path }}
+    
