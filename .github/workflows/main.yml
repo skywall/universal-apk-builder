@@ -25,7 +25,7 @@ jobs:
       - name: Download test keystore file
         uses: wei/wget@v1
         with: 
-          args: -O release.jks https://github.com/skywall/universal-apk-builder/blob/master/test/keystore.jks?raw=true
+          args: -O keystore.jks https://github.com/skywall/universal-apk-builder/blob/master/test/keystore.jks?raw=true
       - name: Download test AAB file
         uses: wei/wget@v1
         with: 
