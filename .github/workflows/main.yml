@@ -24,10 +24,12 @@ jobs:
         uses: actions/checkout@v2
       - name: Download test keystore file
         uses: wei/wget@v1
-        with: -O release.jks https://github.com/skywall/universal-apk-builder/blob/master/test/keystore.jks?raw=true
+        with: 
+          args: -O release.jks https://github.com/skywall/universal-apk-builder/blob/master/test/keystore.jks?raw=true
       - name: Download test AAB file
         uses: wei/wget@v1
-        with: -O app.aab https://github.com/skywall/universal-apk-builder/blob/master/test/app-release.aab?raw=true
+        with: 
+          args: -O app.aab https://github.com/skywall/universal-apk-builder/blob/master/test/app-release.aab?raw=true
       - name: "Build Universal APK"
         uses: skywall/universal-apk-builder@v1
         with:
