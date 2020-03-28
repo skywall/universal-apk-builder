@@ -1,5 +1,5 @@
 # Universal APK Builder Action
-![.github/workflows/main.yml](https://github.com/skywall/universal-apk-builder/workflows/.github/workflows/main.yml/badge.svg?branch=master)
+![Action Build](https://github.com/skywall/universal-apk-builder/workflows/Action%20Build/badge.svg?branch=master)
 
 This action converts given `*.aab` file to universal `*.apk` file. This file includes all 
 dynamic modules.
