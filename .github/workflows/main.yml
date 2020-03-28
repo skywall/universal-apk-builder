@@ -1,9 +1,9 @@
 on: [push]
 
 jobs:
-  test:
+  test-local:
     runs-on: ubuntu-latest
-    name: Build Universal APK - Job
+    name: Test Build Universal APK - local
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -13,6 +13,27 @@ jobs:
           aab_path: "test/app-release.aab"
           output_dir: "output"
           keystore_path: "test/keystore.jks"
+          keystore_password: "android"
+          keystore_alias: "androiddebugkey"
+          keystore_alias_password: "android"   
+  test-remote:
+    runs-on: ubuntu-latest
+    name: Test Build Universal APK - remote
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download test keystore file
+        uses: wei/wget@v1
+        with: -O release.jks https://github.com/skywall/universal-apk-builder/blob/master/test/keystore.jks?raw=true
+      - name: Download test AAB file
+        uses: wei/wget@v1
+        with: -O app.aab https://github.com/skywall/universal-apk-builder/blob/master/test/app-release.aab?raw=true
+      - name: "Build Universal APK"
+        uses: skywall/universal-apk-builder@v1
+        with:
+          aab_path: "app.aab"
+          output_dir: "output"
+          keystore_path: "keystore.jks"
           keystore_password: "android"
           keystore_alias: "androiddebugkey"
           keystore_alias_password: "android"   
