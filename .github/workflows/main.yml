@@ -31,7 +31,7 @@ jobs:
         with: 
           args: -O app.aab https://github.com/skywall/universal-apk-builder/blob/master/test/app-release.aab?raw=true
       - name: "Build Universal APK"
-        uses: skywall/universal-apk-builder@v1
+        uses: skywall/universal-apk-builder@master
         with:
           aab_path: "app.aab"
           output_dir: "output"
