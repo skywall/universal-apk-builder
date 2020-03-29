@@ -1,5 +1,6 @@
 name: "Universal APK Builder"
 description: "Build Universal APK file from AAB file"
+author: "Lukáš Sztefek (@skywall)"
 inputs:
     aab_path:
         description: "Path to input *.aab file"
