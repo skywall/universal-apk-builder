@@ -1,5 +1,6 @@
 name: "Universal APK Builder"
 description: "Build Universal APK file from AAB file"
+author: "Lukáš Sztefek (@skywall)"
 inputs:
     aab_path:
         description: "Path to input *.aab file"
@@ -24,14 +25,10 @@ outputs:
     universal_apk_path:
         description: "Final universal *.apk file path"
 
+branding:
+    icon: "package"
+    color: "green"
+
 runs:
     using: "docker"
     image: "Dockerfile"
-    args:
-        - ${{ inputs.aab_path }}
-        - ${{ inputs.output_dir }}
-        - ${{ inputs.keystore_path }}
-        - ${{ inputs.keystore_password }}
-        - ${{ inputs.keystore_alias }}
-        - ${{ inputs.keystore_alias_password }}
-    
