@@ -50,3 +50,12 @@ Path to final universal APK
     keystore_alias: ${{secrets.KEYSTORE_ALIAS}}
     keystore_alias_password: ${{secrets.KEYSTORE_PASSWORD}}
 ```
+
+## How to test locally
+
+Use [Act](https://github.com/nektos/act).
+
+```bash
+$> brew install nektos/tap/act
+$> act -j test-local -b
+```
