@@ -49,6 +49,9 @@ Path to final universal APK
     keystore_password: ${{secrets.KEYSTORE_PASSWORD}}
     keystore_alias: ${{secrets.KEYSTORE_ALIAS}}
     keystore_alias_password: ${{secrets.KEYSTORE_PASSWORD}}
+- name: Do something with Universal APK
+  with:
+    apk_path: ${{env.UNIVERSAL_APK_PATH}}
 ```
 
 ## How to test locally
