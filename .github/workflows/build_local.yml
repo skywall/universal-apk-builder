@@ -1,0 +1,24 @@
+name: Action Build - local
+on: [push]
+
+jobs:
+  test-local:
+    runs-on: ubuntu-latest
+    name: Test Build Universal APK - local
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: "Build Universal APK - Step"
+        uses: ./
+        with:
+          aab_path: "test/app-release.aab"
+          output_dir: "output"
+          keystore_path: "test/keystore.jks"
+          keystore_password: "android"
+          keystore_alias: "androiddebugkey"
+          keystore_alias_password: "android"
+      - name: "Check APK patch exists"
+        if: ${{ env.UNIVERSAL_APK_PATH != 'output/universal.apk' }} 
+        run: |
+          echo "Path not as expected ('output/universal.apk'): '${{ env.UNIVERSAL_APK_PATH }}'"
+          exit 1

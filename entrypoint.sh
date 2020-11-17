@@ -50,4 +50,4 @@ wait
 final_apk_path="${output_dir}/universal.apk"
 
 echo "Universal APK file path: ${final_apk_path}"
-echo ::set-env name=UNIVERSAL_APK_PATH::${final_apk_path}
+echo UNIVERSAL_APK_PATH=${final_apk_path} >> $GITHUB_ENV

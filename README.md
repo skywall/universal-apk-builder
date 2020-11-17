@@ -62,3 +62,5 @@ Use [Act](https://github.com/nektos/act).
 $> brew install nektos/tap/act
 $> act -j test-local -b
 ```
+
+> Currently not working - act do [not support $GITHUB_ENV](https://github.com/nektos/act/issues/384).
