@@ -42,7 +42,7 @@ Path to final universal APK
 
 ```
 - name: Build Universal APK
-  uses: skywall/universal-apk-builder@v1
+  uses: skywall/universal-apk-builder@v1.0.1
   with:
     aab_path: "/path/to/file.aab"
     keystore_path: "/path/to/keystore.jks"
